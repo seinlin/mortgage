@@ -60,8 +60,8 @@ document.getElementById('calcForm').addEventListener('submit', function (e) {
       '<td>' + fmtCur(principalPayment) + '</td>' +
       '<td>' + fmtCur(interestPayment) + '</td>' +
       '<td>' + fmtCur(totalMortgage) + '</td>' +
-      '<td>' + fmtCur(totalPayment) + '</td>' +
-      '<td>' + fmtCur(balance) + '</td>';
+      '<td>' + fmtCur(balance) + '</td>' +
+      '<td>' + fmtCur(totalPayment) + '</td>';
     body.appendChild(row);
   }
 
@@ -80,8 +80,8 @@ document.getElementById('calcForm').addEventListener('submit', function (e) {
 
   document.getElementById('monthlyPayment').textContent = fmtCur(monthlyTotal);
   document.getElementById('piPayment').textContent = fmtCur(piPayment);
-  document.getElementById('totalPaymentDisplay').textContent = fmtCur(totalPayment);
   document.getElementById('totalInterestDisplay').textContent = fmtCur(totalInterest);
+  document.getElementById('totalPaymentDisplay').textContent = fmtCur(totalPayment);
 
   document.getElementById('resultCard').classList.remove('hidden');
 });
