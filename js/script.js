@@ -44,6 +44,7 @@ document.getElementById('calcForm').addEventListener('submit', function (e) {
   let totalMortgage = 0;
   let totalPayment = 0;
   let totalInterest = 0;
+  let cumulativePrincipal = 0;
 
   for (let m = 1; m <= numPayments; m++) {
     const interestPayment = balance * monthlyRate;
@@ -53,6 +54,7 @@ document.getElementById('calcForm').addEventListener('submit', function (e) {
     totalPayment += monthlyTotal;
     balance -= principalPayment;
     if (balance < 0) balance = 0;
+    cumulativePrincipal += principalPayment;
 
     const row = document.createElement('tr');
     row.innerHTML =
@@ -61,6 +63,7 @@ document.getElementById('calcForm').addEventListener('submit', function (e) {
       '<td>' + fmtCur(interestPayment) + '</td>' +
       '<td>' + fmtCur(totalMortgage) + '</td>' +
       '<td>' + fmtCur(balance) + '</td>' +
+      '<td>' + fmtCur(cumulativePrincipal) + '</td>' +
       '<td>' + fmtCur(totalPayment) + '</td>';
     body.appendChild(row);
   }
